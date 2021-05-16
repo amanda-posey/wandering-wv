@@ -8,10 +8,17 @@ Wandering WV
 ```
 
 `2` A repo for your project 2 (built from express_auth template)
+```text
+https://github.com/amanda-posey/wandering-wv
+```
 
 `3` Wireframe for your app - (Lucidchart)
 
+![wireframe](images/WanderingWV.jpeg)
+
 `4` An ERD with two models (minimum) > User + 1 Resource (one to many) - (Lucidchart)
+
+![ERD](images/WanderingWV_ERD.jpeg)
 
 `5` Create (3-5) User Stories for the base user experience - ( [Reference](https://revelry.co/resources/development/user-stories-that-dont-suck/) )
 ```text
