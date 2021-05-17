@@ -14,8 +14,7 @@ module.exports = (sequelize, DataTypes) => {
     }
   };
   county.init({
-    id: DataTypes.INTEGER,
-    name: DataTypes.TEXT
+    name: DataTypes.STRING
   }, {
     sequelize,
     modelName: 'county',
