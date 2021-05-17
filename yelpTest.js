@@ -1,6 +1,8 @@
 'use strict';
 require('dotenv').config();
 
+// The following test code comes directly from Yelp's developer team
+
 const yelp = require('yelp-fusion');
 
 // Place holder for Yelp Fusion's API Key. Grab them

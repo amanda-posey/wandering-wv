@@ -40,6 +40,5 @@ https://github.com/amanda-posey/wandering-wv
 
 
 `7` Find API and test to see if you can get data ( *be able to print data in the console using Axios, Node-Fetch, and/or Postman* )
-```text
-Using Yelp API for location data - see yelpTest.js for verification.
-```
+
+![API test](images/yelpTestSS.png)
