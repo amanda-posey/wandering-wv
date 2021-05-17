@@ -7,3 +7,11 @@ nav ul li {
 h1 {
   color: chartreuse;
 }
+
+.navbar-brand {
+  margin-left: 10px;
+}
+
+.nav-link {
+  color: lightgoldenrodyellow;
+}

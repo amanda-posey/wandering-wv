@@ -5,7 +5,8 @@ const app = express();
 const flash = require('connect-flash');
 const session = require('express-session');
 const passport = require('./config/ppConfig');
-const isLoggedIn = require('./middleware/isLoggedIn');
+let moment = require('moment');
+const db = require('./models');
 
 const SECRET_SESSION = process.env.SECRET_SESSION;
 
@@ -15,6 +16,10 @@ app.use(require('morgan')('dev'));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(__dirname + '/public'));
 app.use(layouts);
+app.use((req, res, next) => {
+  res.locals.moment = moment
+  next()
+})
 
 app.use(session({
   secret: SECRET_SESSION,
@@ -23,7 +28,7 @@ app.use(session({
 }));
 app.use(flash());
 app.use((req, res, next) => {
-  console.log(res.locals);
+  //console.log(res.locals);
   res.locals.alerts = req.flash();
   res.locals.currentUser = req.user;
   next();
@@ -33,7 +38,14 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 app.get('/', (req, res) => {
-  res.render('index');
+  db.place.findAll()
+  .then((response) => {
+    console.log(response);
+    //res.render('index')
+  }).catch((error) => {
+    console.log(error)
+    //res.status(400).render('main/404')
+  })
 });
 
 app.get('/profile', (req, res) => {
@@ -41,6 +53,7 @@ app.get('/profile', (req, res) => {
 });
 
 app.use('/auth', require('./controllers/auth'));
+app.use('/articles', require('./controllers/articles'));
 
 
 const PORT = process.env.PORT || 3000;

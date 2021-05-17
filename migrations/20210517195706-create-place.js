@@ -8,17 +8,20 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      id: {
-        type: Sequelize.INTEGER
-      },
-      name: {
+      title: {
         type: Sequelize.TEXT
       },
-      countyId: {
-        type: Sequelize.INTEGER
+      content: {
+        type: Sequelize.TEXT
       },
-      categoryId: {
-        type: Sequelize.INTEGER
+      countyName: {
+        type: Sequelize.TEXT
+      },
+      categoryName: {
+        type: Sequelize.TEXT
+      },
+      image: {
+        type: Sequelize.TEXT
       },
       createdAt: {
         allowNull: false,
