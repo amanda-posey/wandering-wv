@@ -6,7 +6,7 @@
    
 <div class="card mb-3">
     <img src="<%= eachData.dataValues.image %> " class="card-img-top" alt=" <%= eachData.dataValues.title %>  ">
-    <h5 class="card-title"> <%= eachData.dataValues.title %> </h5>
+    <h5 class="card-title"><a href="/articles/<%= eachData.dataValues.id %>"><%= eachData.dataValues.title %></a></h5>
     <p class="card-text"> <%= eachData.dataValues.content %> </p>
     <p class="card-text"><small class="text-muted">Last updated: <%= eachData.dataValues.updatedAt %> </small></p>
     <div class="card-body">

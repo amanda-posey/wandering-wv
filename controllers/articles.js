@@ -7,10 +7,10 @@ let router = express.Router()
 // POST /articles - create a new post
 router.post('/', (req, res) => {
   db.place.create({
-    name: req.body.name,
-    county: req.body.countyId,
+    title: req.body.title,
+    countyName: req.body.county,
     content: req.body.content,
-    category: req.body.categoryId,
+    categoryName: req.body.category,
     image: req.body.image
   })
   .then((post) => {
