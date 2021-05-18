@@ -40,8 +40,15 @@ app.use(passport.session());
 app.get('/', (req, res) => {
   db.place.findAll()
   .then((response) => {
-    console.log(response);
-    //res.render('index')
+    let array = [];
+   // console.log(response);
+    response.forEach(result => {
+      array.push(result)
+      console.log('Here is array')
+      console.log(array[0].dataValues);
+      
+    })
+    res.render('index', {data:array})
   }).catch((error) => {
     console.log(error)
     //res.status(400).render('main/404')

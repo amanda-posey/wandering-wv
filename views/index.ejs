@@ -1,12 +1,14 @@
 <h2>Homepage</h2>
 
+<%data.forEach(eachData => {%>
+    
 <div class="card mb-3">
-    <img class="card-img-top" src=" <%= data.image %> " alt="Fairy Trail">
+    <h5 class="card-title"> <%= eachData.dataValues.title %> </h5>
+    <p class="card-text"> <%= eachData.dataValues.content %> </p>
+    <p class="card-text"><small class="text-muted">Last updated: <%= eachData.dataValues.updatedAt %> </small></p>
     <div class="card-body">
-      <h5 class="card-title"> <%= data.name %> </h5>
-      <p class="card-text"> <%= data.content %> </p>
-      <p class="card-text"><small class="text-muted">Last updated: <%= data.updatedAt %> </small></p>
+      
     </div>
   </div>
-
+  <%})%>
 
