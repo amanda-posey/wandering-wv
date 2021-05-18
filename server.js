@@ -60,7 +60,7 @@ app.get('/profile', (req, res) => {
 });
 
 app.use('/auth', require('./controllers/auth'));
-app.use('/articles', require('./controllers/articles'));
+app.use('/places', require('./controllers/places'));
 
 
 const PORT = process.env.PORT || 3000;

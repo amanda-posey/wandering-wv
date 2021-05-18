@@ -2,16 +2,16 @@ let express = require('express')
 let db = require('../models')
 let router = express.Router()
 
-/* SHAMELESSLY SWIPED FROM BLOGPLUS PROJECT */
+/* SHAMELESSLY SWIPED FROM BLOGPULSE */
 
 // POST /articles - create a new post
 router.post('/', (req, res) => {
   db.place.create({
     title: req.body.title,
-    countyName: req.body.county,
     content: req.body.content,
-    categoryName: req.body.category,
-    image: req.body.image
+    countyName: req.body.countyName,
+    categoryName: req.body.categoryName,
+    image: req.body.imageUpload
   })
   .then((post) => {
     res.redirect('/')
@@ -25,22 +25,24 @@ router.post('/', (req, res) => {
 router.get('/new', (req, res) => {
   db.place.findAll()
   .then((places) => {
-    res.render('articles/new', { places: places })
+    res.render('places/new', { places: places })
   })
   .catch((error) => {
     res.status(400).render('main/404')
   })
 })
 
-// GET /articles/:id - display a specific post and its author
+// GET /places/:id - display a specific post and its author
 router.get('/:id', (req, res) => {
-  db.article.findOne({
-    where: { id: req.params.id }
+  console.log('in id route')
+  db.place.findOne({
+    where: { id: req.params.id },
   })
-  .then((article) => {
-    if (!article) throw Error()
-    console.log(article.id)
-    res.render('articles/show', { article: article })
+  .then((thisPlace) => {
+    console.log('then statement')
+    if (!thisPlace) throw Error()
+    console.log(thisPlace.dataValues.title)
+    res.render('places/show', { data:thisPlace })
   })
   .catch((error) => {
     console.log(error)
