@@ -25,4 +25,10 @@ function fetchPlaces() {
     })
 }
 
-fetchPlaces();
+// fetchPlaces();
+
+function addcounty() {
+    db.county.create({
+        county: 'Barbour'
+    })
+}

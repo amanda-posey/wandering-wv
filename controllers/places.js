@@ -4,7 +4,7 @@ let router = express.Router()
 
 /* SHAMELESSLY SWIPED FROM BLOGPULSE */
 
-// POST /articles - create a new post
+// POST /places - create a new post
 router.post('/', (req, res) => {
   db.place.create({
     title: req.body.title,
@@ -21,7 +21,7 @@ router.post('/', (req, res) => {
   })
 })
 
-// GET /articles/new - display form for creating new articles
+// GET /places/new - display form for creating new articles
 router.get('/new', (req, res) => {
   db.place.findAll()
   .then((places) => {

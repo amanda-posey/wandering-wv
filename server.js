@@ -51,7 +51,7 @@ app.get('/', (req, res) => {
     res.render('index', {data:array})
   }).catch((error) => {
     console.log(error)
-    //res.status(400).render('main/404')
+    res.status(400).render('main/404')
   })
 });
 
