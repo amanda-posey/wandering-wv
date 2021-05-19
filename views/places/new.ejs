@@ -1,5 +1,9 @@
+
+
 <h1>Submit A New Place</h1>
 
+<div class="col-10">
+    <div class="row justify-content-center">
 <form action="/places" method="POST">
   <div class="form-group">
     <label for="title">Title</label>
@@ -8,9 +12,9 @@
 
   <div class="form-group">
     <label for="county">County</label>
-    <select name="countyName" id="author" class="form-control" required>
+    <select name="countyName" id="county" class="form-control" required>
       <% counties.forEach(function(county) { %>
-        <option value="<%= county.id %>"><%= county.county %></option>
+        <option value="<%= county.id %>"><%= county.name %></option>
       <% }) %>
     </select>
   </div>
@@ -22,3 +26,5 @@
 
   <input type="submit" class="btn btn-primary">
 </form>
+</div>
+</div>

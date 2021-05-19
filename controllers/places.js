@@ -23,9 +23,9 @@ router.post('/', (req, res) => {
 
 // GET /places/new - display form for creating new articles
 router.get('/new', (req, res) => {
-  db.place.findAll()
-  .then((places) => {
-    res.render('places/new', { places: places })
+  db.county.findAll()
+  .then((counties) => {
+    res.render('places/new', { counties: counties })
   })
   .catch((error) => {
     res.status(400).render('main/404')
