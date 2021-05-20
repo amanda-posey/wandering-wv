@@ -2,6 +2,7 @@ var express = require('express')
 var db = require('../models')
 var router = express.Router()
 
+// POST route to create a new comment.
 router.post('/', (req, res) => {
   db.comment.create(req.body)
   .then((createdComment) => {
@@ -14,4 +15,41 @@ router.post('/', (req, res) => {
   })
 })
 
+// GET route to display the edit form.
+router.get('/:id', (req, res) => {
+  //console.log('in id route')
+  db.comment.findOne({
+    where: { id: req.params.id }
+  })
+  .then((thisComment) => {
+    console.log(thisComment.dataValues)
+    res.render('comments/edit', {
+        c: thisComment.dataValues
+      })
+    })
+    .catch((err) => {
+      console.log(err)
+      res.render('main/404')
+    })
+  });
+
+  // PUT route for editing comments.
+  router.put('/:id', (req, res) => {
+      console.log('in PUT route')
+    db.comment.update(
+      req.body,
+      {
+        where: { id: req.params.id },
+        include: [db.place]
+      }
+    )
+    .then((updatedRows) => {
+      console.log('success', updatedRows)
+      res.redirect('/places/' + updatedRows.dataValues.placeId)
+    })
+    .catch((err) => {
+      console.log(err)
+      res.render('main/404')
+    })
+  })
 module.exports = router
