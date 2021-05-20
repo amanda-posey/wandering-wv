@@ -1,10 +1,10 @@
-<div class="container col-6">
+<div class="container col-8">
 <div class="card">
     <div class="card-body">
         <h1><%= data.dataValues.title %> <small> <%= data.dataValues.countyName %> County</small></h1>
 
 <p>
-  <strong><%= moment(data.dataValues.createdAt).calendar() %></strong>
+  <%= moment(data.dataValues.createdAt).calendar() %>
 </p>
 
 <p><%= data.dataValues.content %></p>
@@ -13,8 +13,58 @@
 
 </div>
 
+<div class="container col-8">
+  <div class="card">
+      <div class="card-body">
+<div class="comments">
+  <h4> Comments: </h4>
+  <% if(data.dataValues.comments && data.dataValues.comments.length) { %>
+    <% data.dataValues.comments.forEach((c) => { %>
+      <p>
+        <em>&lsquo;<%= c.content %>&rsquo;</em>
+        &mdash;<%= c.name %>
+      </p>
+    <% }) %>
+  <% } else { %>
+    <p>Be the first to comment on this place</p>
+  <% } %>
+</div>
+</div>
+</div>
+</div>
 
 
+<div class="container col-8">
+  <div class="card">
+      <div class="card-body">
+
+<h4>Join the Conversation</h4>
+
+<form class="col-sm-12" method="POST" action="/comments">
+  <input type="hidden" name="placeId" value="<%=data.dataValues.id%>">
+  <div class="row">
+    <div class="input-field col-sm-12">
+      <input placeholder="Your Name" id="name" name="name" type="text" class="form-control">
+      <label for="name">Your Name</label>
+    </div>
+  </div>
+  <div class="row">
+    <div class="input-field  col-xs-12">
+      <textarea id="content" name="content" class="form-control"></textarea>
+      <label for="content">Your Thoughts</label>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12">
+      <button class="btn btn-primary" type="submit">
+        Add Comment
+      </button>
+    </div>
+  </div>
+</form>
+</div>
+</div>
+</div>
 
 
 <hr />

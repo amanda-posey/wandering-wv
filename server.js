@@ -61,6 +61,7 @@ app.get('/profile', (req, res) => {
 
 app.use('/auth', require('./controllers/auth'));
 app.use('/places', require('./controllers/places'));
+app.use('/comments', require('./controllers/comment'));
 
 
 const PORT = process.env.PORT || 3000;

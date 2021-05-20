@@ -37,9 +37,11 @@ router.get('/:id', (req, res) => {
   console.log('in id route')
   db.place.findOne({
     where: { id: req.params.id },
+    include: [db.comment]
   })
   .then((thisPlace) => {
     console.log('then statement')
+    // console.log(thisPlace) When I was adding comments, I forgot what my data looked like and had to console.log it again.
     if (!thisPlace) throw Error()
     console.log(thisPlace.dataValues.title)
     res.render('places/show', { data:thisPlace })
