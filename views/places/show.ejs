@@ -24,7 +24,11 @@
         <em>&lsquo;<%= c.content %>&rsquo;</em>
         &mdash;<%= c.name %>
       </p>
-      <a href="/comments/<%= c.id %>">Edit</a>
+      <a class="btn btn-primary btn-sm" href="/comments/<%= c.id %>" role="button">Edit</a>
+      <form method="POST" action="/comments/<%= c.id %>/?_method=DELETE">
+        <input type="submit" value="Delete">
+    </form>
+      
     
     <% }) %>
   <% } else { %>
@@ -58,7 +62,7 @@
   </div>
   <div class="row">
     <div class="col-sm-12">
-      <button class="btn btn-primary" type="submit">
+      <button class="btn btn-primary btn-sm" type="submit">
         Add Comment
       </button>
     </div>

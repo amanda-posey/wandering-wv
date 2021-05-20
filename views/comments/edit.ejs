@@ -3,13 +3,14 @@
 <div class="container col-8">
   <div class="card">
       <div class="card-body">
-        <form action="/comment/<%=c.id%>?_method=PUT" method="POST">
+        <form method="POST" action="/comments/<%=c.id%>/?_method=PUT">
+          <input type="hidden" name="placeId" value="<%=c.placeId%>">
           <div class="form-group">
             <p>Name: <%= c.name %> </p>
             <label for="content">Comment</label>
             <textarea type="text" class="form-control" id="content" name="content" required><%= c.content %></textarea>
           </div>
-            <input type="submit" class="btn btn-success">
+            <input type="submit" class="btn btn-primary btn-sm">
         </form>
       </div>
     </div>

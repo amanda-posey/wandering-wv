@@ -22,7 +22,7 @@ router.get('/:id', (req, res) => {
     where: { id: req.params.id }
   })
   .then((thisComment) => {
-    console.log(thisComment.dataValues)
+    //console.log(thisComment.dataValues)
     res.render('comments/edit', {
         c: thisComment.dataValues
       })
@@ -35,7 +35,7 @@ router.get('/:id', (req, res) => {
 
   // PUT route for editing comments.
   router.put('/:id', (req, res) => {
-      console.log('in PUT route')
+      //console.log('in PUT route')
     db.comment.update(
       req.body,
       {
@@ -45,11 +45,32 @@ router.get('/:id', (req, res) => {
     )
     .then((updatedRows) => {
       console.log('success', updatedRows)
-      res.redirect('/places/' + updatedRows.dataValues.placeId)
+
+      res.redirect('/places/' + req.body.placeId)
     })
     .catch((err) => {
       console.log(err)
       res.render('main/404')
     })
   })
+
+  // DELETE
+router.delete('/:id', (req, res) => {
+  console.log(req.params);
+  db.comment.destroy(
+      {
+        where: { id: req.params.id }
+      }
+  )
+  .then(deletedComment => {
+    console.log('Success: DELETE')
+
+    res.redirect('back')
+  })
+  .catch((err) => {
+    console.log('Error in DELETE /comments', err)
+    res.send('An error occurred on the server; please check your logs.')
+  })
+})
+
 module.exports = router
