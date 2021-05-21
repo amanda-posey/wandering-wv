@@ -1,6 +1,7 @@
-let express = require('express')
-let db = require('../models')
-let router = express.Router()
+require('dotenv').config();
+let express = require('express');
+let db = require('../models');
+let router = express.Router();
 
 /* SHAMELESSLY SWIPED FROM BLOGPULSE */
 
@@ -21,6 +22,7 @@ router.post('/', (req, res) => {
   })
 })
 
+
 // GET /places/new - display form for creating new articles
 router.get('/new', (req, res) => {
   db.county.findAll()
@@ -40,11 +42,17 @@ router.get('/:id', (req, res) => {
     include: [db.comment]
   })
   .then((thisPlace) => {
-    console.log('then statement')
-    // console.log(thisPlace) When I was adding comments, I forgot what my data looked like and had to console.log it again.
+    //console.log('then statement')
+    //console.log(thisPlace); 
     if (!thisPlace) throw Error()
-    console.log(thisPlace.dataValues.title)
-    res.render('places/show', { data:thisPlace })
+    //console.log(thisPlace.dataValues.title)
+    const title = thisPlace.dataValues.title;
+    const urlTitle = title.replace(/\s/g, '+')
+    //console.log(urlTitle);
+    res.render('places/show', { 
+      data:thisPlace, 
+      apikey:process.env.API_KEY, 
+      search:urlTitle })
   })
   .catch((error) => {
     console.log(error)

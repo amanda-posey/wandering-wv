@@ -46,9 +46,9 @@ app.get('/', (req, res) => {
    // console.log(response);
     response.forEach(result => {
       array.push(result)
-      console.log('Here is array')
-      console.log(array[0].dataValues);
-      
+      //console.log('Here is array')
+      //console.log(array[0].dataValues);
+      console.log(process.env.API_KEY)
     })
     res.render('index', {data:array})
   }).catch((error) => {
