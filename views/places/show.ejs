@@ -2,8 +2,9 @@
   <div class="container col-8">
     <div class="card">
       <div class="card-body">
-        <h1><%= data.dataValues.title %> <small> <%= data.dataValues.countyName %> County</small></h1>
+        <h1><%= data.dataValues.title %></h1>
         <p>
+          County: <a href="/county/<%= data.dataValues.countyName %>"></a><%= data.dataValues.countyName %> <br>
         <%= moment(data.dataValues.createdAt).calendar() %>
         </p>
         <p><%= data.dataValues.content %></p>

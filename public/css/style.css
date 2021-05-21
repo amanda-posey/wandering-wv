@@ -15,3 +15,7 @@ nav ul li {
 .container-fluid {
   background-color: lightsteelblue;
 }
+
+.card{
+  margin-bottom: 10px;
+}

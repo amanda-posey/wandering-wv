@@ -4,7 +4,7 @@
           Explore By County
         </a>
         <%countyArray.forEach(c => {%>
-          <a href="/county/<%= c.dataValues.id %> " class="list-group-item list-group-item-action"><%= c.dataValues.name %> </a>
+          <a href="/county/<%= c.dataValues.id %> " class="list-group-item list-group-item-action"><%= c.dataValues.countyName %> </a>
         <%})%> 
       </div>
     </div>

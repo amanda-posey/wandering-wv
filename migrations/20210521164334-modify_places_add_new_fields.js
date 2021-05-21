@@ -18,7 +18,7 @@ module.exports = {
   down(queryInterface, Sequelize) {
     // logic for reverting the changes
     return Promise.all([
-      queryInterface.removeColumn('Users', 'linkedin')
+      queryInterface.removeColumn('places', 'searchString')
     ]);
   },
 };

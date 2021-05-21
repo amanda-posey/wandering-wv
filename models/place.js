@@ -12,6 +12,7 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       // define association here
       models.place.hasMany(models.comment)
+      
     }
   };
   place.init({
