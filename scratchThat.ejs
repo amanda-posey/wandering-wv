@@ -1,0 +1,12 @@
+<div class="container col-3">
+    <div class="list-group">
+        <a href="#" class="list-group-item list-group-item-action active">
+          Explore By County
+        </a>
+        <%countyArray.forEach(c => {%>
+          <a href="/county/<%= c.dataValues.id %> " class="list-group-item list-group-item-action"><%= c.dataValues.name %> </a>
+        <%})%> 
+      </div>
+    </div>
+  </div>
+</div>
