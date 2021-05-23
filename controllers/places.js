@@ -43,7 +43,7 @@ router.get('/:id', (req, res) => {
   })
   .then((thisPlace) => {
     //console.log('then statement')
-    //console.log(thisPlace); 
+    console.log(thisPlace); 
     if (!thisPlace) throw Error()
     //console.log(thisPlace.dataValues.title)
     const title = thisPlace.dataValues.title;
