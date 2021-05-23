@@ -1,4 +1,11 @@
 <div class="container-fluid">
+  <div class="row">
+  <div class="photo-container col-2 order-first">
+    <img src="<%= data.dataValues.image1 %>" class="rounded float-left side-img">
+    <img src="<%= data.dataValues.image2 %>" class="rounded float-left side-img">
+    <img src="<%= data.dataValues.image3 %>" class="rounded float-left side-img">
+  </div>
+
   <div class="container col-8">
     <div class="card">
       <div class="card-body">
@@ -13,8 +20,16 @@
     </div>
   </div>
 
-<div class="container col-6">
-  <div class="embed-responsive embed-responsive-4by3">
+  <div class="photo-container col-2 order-last">
+    <img src="<%= data.dataValues.image4 %>" class="rounded float-right side-img">
+    <img src="<%= data.dataValues.image5 %>" class="rounded float-right side-img">
+    <img src="<%= data.dataValues.image6 %>" class="rounded float-right side-img">
+  </div>
+
+  </div>
+
+  <div class="container col-6">
+  <div class="embed-responsive">
     <iframe
     class="embed-responsive-item"
     width="600"
@@ -25,9 +40,9 @@
     src="https://www.google.com/maps/embed/v1/place?key=<%= apikey %>&q=<%= search %>,WV">
     </iframe>
   </div>
-</div>
+  </div>
 
-<div class="container col-8">
+  <div class="container col-8">
   <div class="card">
       <div class="card-body">
         <div class="comments">
@@ -48,19 +63,19 @@
   <% } else { %>
     <p>Be the first to comment on this place</p>
   <% } %>
-</div>
-</div>
-</div>
-</div>
+  </div>
+  </div>
+  </div>
+  </div>
 
 
-<div class="container col-8">
+  <div class="container col-8">
   <div class="card">
       <div class="card-body">
 
-<h4>Join the Conversation</h4>
+  <h4>Join the Conversation</h4>
 
-<form class="col-sm-12" method="POST" action="/comments">
+  <form class="col-sm-12" method="POST" action="/comments">
   <input type="hidden" name="placeId" value="<%=data.dataValues.id%>">
   <div class="row">
     <div class="input-field col-sm-12">
@@ -81,16 +96,15 @@
       </button>
     </div>
   </div>
-</form>
-</div>
-</div>
-</div>
+  </form>
+  </div>
+  </div>
+  </div>
 
 
-<hr />
-
-<div class="nav">
+  <div class="nav">
     <a href="/">Back Home</a>
     </div>
 
   </div>
+</div>
