@@ -23,6 +23,10 @@ Express authentication template using Passport + Flash messages + custom middlew
 | createdAt | Date | Auto-generated |
 | updatedAt | Date | Auto-generated |
 
+### Places Model
+
+|Column Name | Data Type |
+
 ### Default Routes
 
 | Method | Path | Location | Purpose |

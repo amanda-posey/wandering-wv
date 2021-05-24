@@ -32,11 +32,10 @@ https://github.com/amanda-posey/wandering-wv
 | VERB | URL | ACTION | DESCRIPTION
 | ----------- | ----------- | ----------- | ----------- |
 | GET | /index | Index (Read) | displays homepage
-| GET | /blog/:id | Show (Read) | displays individual post
-| POST | /blog/new | Create (Create) | creates new blog post
-| GET | blog/categories | Show (Read) | displays a list of categories
-| PUT | /user/favorites | Update (Update) | updates a list of favorites
-| DELETE | /user/favorites | Destroy (Delete) | deletes an item from favorites
+| GET | /places/:id | Show (Read) | displays individual post
+| POST | /comment/ | Create (Create) | creates new comment
+| PUT | /comment/:id| Update (Update) | edit comment
+| DELETE | /comment/:id| Destroy (Delete) | deletes a comment
 
 
 `7` Find API and test to see if you can get data ( *be able to print data in the console using Axios, Node-Fetch, and/or Postman* )
