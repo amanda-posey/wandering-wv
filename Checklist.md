@@ -6,13 +6,13 @@
 
 - [x] Incorporate at least one third-party API.
 
-- [ ] Have complete RESTful routes for at least one of your resources (models) with GET, POST, PUT, and DELETE
+- [x] Have complete RESTful routes for at least one of your resources (models) with GET, POST, PUT, and DELETE
 
 - [x] Utilize an ORM to create a database table structure and interact with your relationally-stored data
 
-- [ ] Include a readme file that explains how to use your app (also how to set up the db, obtain api keys, what environment variables are needed, etc, so anyone can fork and clone your app then run it locally
+- [x] Include a readme file that explains how to use your app (also how to set up the db, obtain api keys, what environment variables are needed, etc, so anyone can fork and clone your app then run it locally
 
-- [ ] Have semantically clean HTML, CSS, and back-end code
+- [x] Have semantically clean HTML, CSS, and back-end code
 
 - [x] Be deployed online and accessible to the public (we will do a lesson in class on deployment to heroku)
 
