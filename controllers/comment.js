@@ -56,7 +56,7 @@ router.get('/:id', (req, res) => {
 
   // DELETE
 router.delete('/:id', (req, res) => {
-  console.log(req.params);
+  //console.log(req.params);
   db.comment.destroy(
       {
         where: { id: req.params.id }

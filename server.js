@@ -43,7 +43,7 @@ app.get('/', (req, res) => {
   db.place.findAll()
   .then((response) => {
     let array = [];
-    console.log(response);
+    //console.log(response);
     response.forEach(result => {
       array.push(result)
       //console.log('Here is array')
@@ -63,6 +63,7 @@ app.get('/profile', (req, res) => {
 app.use('/auth', require('./controllers/auth'));
 app.use('/places', require('./controllers/places'));
 app.use('/comments', require('./controllers/comment'));
+app.use('/county', require('./controllers/county'));
 
 
 const PORT = process.env.PORT || 3000;

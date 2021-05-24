@@ -1,0 +1,18 @@
+<h1> <%= name %> County </h1>
+
+<div class="container-fluid">
+    <div class="row main">
+    <div class="container col-8">
+    <%data.forEach(eachData => {%>
+       
+    <div class="card mb-3">
+        <img src="<%= eachData.dataValues.image %> " class="card-img-top" alt=" <%= eachData.dataValues.title %>  ">
+        <h5 class="card-title"><a href="/places/<%= eachData.dataValues.id %>"><%= eachData.dataValues.title %></a></h5>
+        <p class="card-text"> <%= eachData.dataValues.content %> </p>
+        <p class="card-text"><small class="text-muted">Last updated: <%= eachData.dataValues.updatedAt %> </small></p>
+        <div class="card-body">
+          
+        </div>
+      </div>
+      <%})%>
+    </div>

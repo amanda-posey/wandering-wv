@@ -36,14 +36,14 @@ router.get('/new', (req, res) => {
 
 // GET /places/:id - display a specific post and its author
 router.get('/:id', (req, res) => {
-  console.log('in id route')
+  //console.log('in id route')
   db.place.findOne({
     where: { id: req.params.id },
     include: [db.comment]
   })
   .then((thisPlace) => {
     //console.log('then statement')
-    console.log(thisPlace); 
+    //console.log(thisPlace); 
     if (!thisPlace) throw Error()
     //console.log(thisPlace.dataValues.title)
     const title = thisPlace.dataValues.title;
