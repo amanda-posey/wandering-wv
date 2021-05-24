@@ -12,7 +12,6 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       // define association here
       models.place.hasMany(models.comment)
-      
     }
   };
   place.init({
@@ -20,7 +19,12 @@ module.exports = (sequelize, DataTypes) => {
     content: DataTypes.TEXT,
     countyName: DataTypes.TEXT,
     categoryName: DataTypes.TEXT,
-    image: DataTypes.TEXT
+    image: DataTypes.TEXT,
+    image2: DataTypes.TEXT,
+    image3: DataTypes.TEXT,
+    image4: DataTypes.TEXT,
+    image5: DataTypes.TEXT,
+    image6: DataTypes.TEXT
   }, {
     sequelize,
     modelName: 'place',

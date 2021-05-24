@@ -1,13 +1,18 @@
 <div class="container-fluid">
   <div class="row">
-  <div class="photo-container col-2 order-first">
-    <img src="<%= data.dataValues.image1 %>" class="rounded float-left side-img">
-    <img src="<%= data.dataValues.image2 %>" class="rounded float-left side-img">
-    <img src="<%= data.dataValues.image3 %>" class="rounded float-left side-img">
-  </div>
+    <div class="photo-container col-3 float-left">
 
-  <div class="container col-8">
+    <div class="card" style="width: 18rem;">
+      <img class="card-img-top" src="<%= data.dataValues.image2 %> " alt="Card image cap">
+    </div>
+    <div class="card" style="width: 18rem;">
+      <img class="card-img-top" src="<%= data.dataValues.image3 %> " alt="Card image cap">
+    </div>
+    </div>
+
+  <div class="container col-6">
     <div class="card">
+      <img class="card-img-top" src="<%= data.dataValues.image %> " alt="Card image cap">
       <div class="card-body">
         <h1><%= data.dataValues.title %></h1>
         <p>
@@ -19,13 +24,15 @@
       </div>
     </div>
   </div>
+  <div class="photo-container col-3 float-right">
 
-  <div class="photo-container col-2 order-last">
-    <img src="<%= data.dataValues.image4 %>" class="rounded float-right side-img">
-    <img src="<%= data.dataValues.image5 %>" class="rounded float-right side-img">
-    <img src="<%= data.dataValues.image6 %>" class="rounded float-right side-img">
-  </div>
-
+    <div class="card" style="width: 18rem;">
+      <img class="card-img-top" src="<%= data.dataValues.image4 %> " alt="Card image cap">
+    </div>
+    <div class="card" style="width: 18rem;">
+      <img class="card-img-top" src="<%= data.dataValues.image5 %> " alt="Card image cap">
+    </div>
+    </div>
   </div>
 
   <div class="container col-6">

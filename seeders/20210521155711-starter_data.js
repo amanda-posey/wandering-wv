@@ -15,7 +15,7 @@ module.exports = {
       image6: 'https://res.cloudinary.com/dw4srrlry/image/upload/v1621735387/bwf6_b13d8y.jpg',
       createdAt: new Date(),
       updatedAt: new Date(),
-      searchString: 'blackwater+falls+state+park'
+      
       },
       {
         title: 'Mason Dixon Historical Park',
@@ -30,7 +30,7 @@ module.exports = {
         image6: 'https://res.cloudinary.com/dw4srrlry/image/upload/v1621736094/ft6_poufuk.jpg',
         createdAt: new Date(),
         updatedAt: new Date(),
-        searchString: 'mason+dixon+historical'
+        
         },
         {
           title: 'Holly River State Park',
@@ -45,7 +45,7 @@ module.exports = {
           image6: 'https://res.cloudinary.com/dw4srrlry/image/upload/v1621736548/hrsp6_lnfxue.jpg',
           createdAt: new Date(),
           updatedAt: new Date(),
-          searchString: 'holly+river+state+park'
+          
           },
           {
             title: 'New River Gorge Park',
@@ -60,7 +60,7 @@ module.exports = {
             image6: 'https://res.cloudinary.com/dw4srrlry/image/upload/v1621815896/nrg6_enfyq0.jpg',
             createdAt: new Date(),
             updatedAt: new Date(),
-            searchString: 'new+river+gorge+park'
+            
             },
             {
               title: 'Trans Allegheny Lunatic Asylum',
@@ -75,7 +75,7 @@ module.exports = {
               image6: 'https://res.cloudinary.com/dw4srrlry/image/upload/v1621816615/tala6_l6oe4j.jpg',
               createdAt: new Date(),
               updatedAt: new Date(),
-              searchString: 'trans+allegheny+lunatic+asylum'
+              
               }
       ], {});
     
